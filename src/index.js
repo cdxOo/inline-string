@@ -15,7 +15,7 @@ module.exports = function inlineString (call_site, ...placeholder_values) {
             var arg = placeholder_values[i];
             return (
                 arg 
-                ? str + arg.replace(newlines, '').trim()
+                ? str + String(arg).replace(newlines, '').trim()
                 : str
             );
         })
